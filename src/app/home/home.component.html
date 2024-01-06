@@ -19,22 +19,21 @@
     <a class="text-base font-medium hover:text-blue-600" href="#contact">
       Contact
     </a>
-    <div class="group relative inline-block" (mouseover)="showDropdown = true" (mouseleave)="showDropdown = false">
+    <div class="group relative inline-block">
       <span class="text-base font-medium cursor-pointer hover:text-blue-600">Compte</span>
-      <div class="dropdown-menu absolute right-0 w-48 py-2 mt-2 bg-white rounded-md shadow-xl"
-        [style.opacity]="showDropdown ? '1' : '0'">
-        <a class="block px-4 py-2 text-sm text-gray-800 hover:bg-blue-600 hover:text-white" href="#"
+      <div class="dropdown-menu absolute right-0 w-48 py-2 mt-2 bg-white rounded-md shadow-xl">
+        <div class="block px-4 py-2 text-sm text-gray-800 hover:bg-blue-500 hover:text-white"
           (click)="onMenuOptionClick('Se connecter')">
           Se connecter
-        </a>
-        <a class="block px-4 py-2 text-sm text-gray-800 hover:bg-blue-600 hover:text-white" href="#"
+        </div>
+        <div class="block px-4 py-2 text-sm text-gray-800 hover:bg-blue-500 hover:text-white"
           (click)="onMenuOptionClick('Créer un compte')">
           Créer un compte
-        </a>
-        <a class="block px-4 py-2 text-sm text-red-500 hover:bg-blue-600 hover:text-white" href="#"
+        </div>
+        <div class="block px-4 py-2 text-sm text-red-500 hover:bg-blue-500 hover:text-white"
           (click)="onMenuOptionClick('Se déconnecter')">
           Se déconnecter
-        </a>
+        </div>
       </div>
     </div>
   </nav>
@@ -58,7 +57,7 @@
             améliorer votre productivité.
           </p>
           <div class="space-x-4">
-            <a class="inline-flex h-9 items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-blue-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-900 disabled:pointer-events-none disabled:opacity-50"
+            <a class="inline-flex h-9 items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-900 disabled:pointer-events-none disabled:opacity-50"
               href="#fonctionnalites">
               Commencer
             </a>
@@ -89,7 +88,8 @@
           </svg>
           <h3 class="text-lg font-bold">Gestion des compétitions</h3>
           <p class="text-sm text-gray-500 dark:text-gray-400">
-            Gardez une trace de vos compétitions et gérez les automatiquement grâce une interface simple, fluide et intuitive.
+            Gardez une trace de vos compétitions et gérez les automatiquement grâce une interface simple, fluide et
+            intuitive.
           </p>
         </div>
         <div class="grid gap-1 text-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -104,7 +104,8 @@
             <rect width="7" height="5" x="10" y="12" rx="1"></rect>
           </svg>
           <h3 class="text-lg font-bold">Affichage du classement</h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400">Affichez en un clic le classement d'une compétition afin que les participants puisse suivre leur position en temps réel .</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Affichez en un clic le classement d'une compétition afin
+            que les participants puisse suivre leur position en temps réel .</p>
         </div>
         <div class="grid gap-1 text-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -116,7 +117,8 @@
           </svg>
           <h3 class="text-lg font-bold">Rapports &amp; Analytiques</h3>
           <p class="text-sm text-gray-500 dark:text-gray-400">
-            Obtenez des informations sur vos compétitions grâce à des rapports, des analyses détaillés ainsi que des conseils personnalisés pour les tireurs.
+            Obtenez des informations sur vos compétitions grâce à des rapports, des analyses détaillés ainsi que des
+            conseils personnalisés pour les tireurs.
           </p>
         </div>
         <div class="grid gap-1 text-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -183,7 +185,7 @@
                   style="--darkreader-inline-stroke: currentColor;">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                Gestion des tâches
+                Gestion de 2 compétitions par mois
               </li>
               <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -191,16 +193,24 @@
                   style="--darkreader-inline-stroke: currentColor;">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                Suivi du temps
+                Génération de rapport de compétition
+              </li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="h-4 w-4 inline" data-darkreader-inline-stroke=""
+                  style="--darkreader-inline-stroke: currentColor;">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Dashboard des données
               </li>
             </ul>
           </div>
           <div class="flex items-center p-6"><button
-              class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-blue-600 text-white hover:bg-blue-800 w-full">Choisir
+              class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-blue-500 text-white hover:bg-blue-700 w-full">Choisir
               le plan</button></div>
         </div>
         <div
-          class="rounded-lg bg-card text-card-foreground shadow-sm w-[340px] bg-white border border-4 border-blue-500 relative flex flex-col"
+          class="rounded-lg bg-card text-card-foreground shadow-sm w-[340px] bg-white border border-2 border-blue-500 relative flex flex-col"
           data-v0-t="card">
           <div
             class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white px-2 py-1 rounded-md">
@@ -222,7 +232,7 @@
                   style="--darkreader-inline-stroke: currentColor;">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                Gestion des tâches
+                Fonctionnalités de l'abonnement Basique
               </li>
               <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -230,7 +240,7 @@
                   style="--darkreader-inline-stroke: currentColor;">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                Suivi du temps
+                Gestion de 4 compétitions par mois
               </li>
               <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -238,7 +248,7 @@
                   style="--darkreader-inline-stroke: currentColor;">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                Collaboration
+                Génération de rapport personnalisé par tireur
               </li>
               <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -246,12 +256,12 @@
                   style="--darkreader-inline-stroke: currentColor;">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                Rapports &amp; Analytiques
+                Conseils personnalisés pour les tireurs
               </li>
             </ul>
           </div>
           <div class="flex items-center p-6"><button
-              class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-blue-600 text-white hover:bg-blue-800 w-full">Choisir
+              class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-blue-500 text-white hover:bg-blue-700 w-full">Choisir
               le plan</button></div>
         </div>
         <div class="rounded-lg bg-white border border-gray-300 shadow-md w-[340px] flex flex-col" data-v0-t="card">
@@ -271,7 +281,7 @@
                   style="--darkreader-inline-stroke: currentColor;">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                Gestion des tâches
+                Fonctionnalités de l'abonnement Pro
               </li>
               <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -279,7 +289,7 @@
                   style="--darkreader-inline-stroke: currentColor;">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                Suivi du temps
+                Gestion de compétitions illimitée
               </li>
               <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -287,7 +297,7 @@
                   style="--darkreader-inline-stroke: currentColor;">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                Collaboration
+                Génération de QR Code de consultation du classement
               </li>
               <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -295,28 +305,12 @@
                   style="--darkreader-inline-stroke: currentColor;">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                Rapports &amp; Analytiques
-              </li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="h-4 w-4 inline" data-darkreader-inline-stroke=""
-                  style="--darkreader-inline-stroke: currentColor;">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                Sécurité
-              </li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="h-4 w-4 inline" data-darkreader-inline-stroke=""
-                  style="--darkreader-inline-stroke: currentColor;">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                Stockage en nuage
+                Support dédié
               </li>
             </ul>
           </div>
           <div class="flex items-center p-6"><button
-              class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-blue-600 text-white hover:bg-blue-800 w-full">Choisir
+              class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-blue-500 text-white hover:bg-blue-700 w-full">Choisir
               le plan</button></div>
         </div>
       </div>
@@ -351,7 +345,7 @@
               for="message">Message</label><textarea
               class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px]"
               id="message" placeholder="Entrez votre message"></textarea></div><button
-            class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-blue-600 text-white hover:bg-blue-800">Envoyer
+            class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-blue-500 text-white hover:bg-blue-700">Envoyer
             le message</button>
         </div>
       </div>
@@ -369,15 +363,3 @@
     </a>
   </nav>
 </footer>
-
-<style>
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    right: 0;
-  }
-
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
-</style>
