@@ -1,28 +1,34 @@
 <header class="px-4 lg:px-6 h-16 flex items-center fixed w-full bg-white z-50 shadow-sm border-b border-gray-200">
-  <a class="flex items-center justify-center mb-0.5 " href="#">
+  <div class="flex items-center justify-center mb-0.5 cursor-pointer" (click)="scrollToSection('landing')">
     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7 mr-2"
-      data-darkreader-inline-stroke="" style="--darkreader-inline-stroke: currentColor;">
-      <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z">
-      </path>
+      style="--darkreader-inline-stroke: currentColor;">
+      <circle cx="12" cy="12" r="10"></circle>
+      <circle cx="12" cy="12" r="6"></circle>
+      <circle cx="12" cy="12" r="2"></circle>
     </svg>
     <span class="text-xl font-semibold ">Aim Display</span>
-  </a>
+  </div>
 
   <!-- Bouton du menu burger pour les petits écrans -->
   <button class="lg:hidden ml-auto mr-3" (click)="toggleBurgerMenu($event)">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
     </svg>
   </button>
 
   <!-- Navigation principale pour les grands écrans -->
   <nav class="hidden lg:flex ml-auto gap-4 sm:gap-6 items-center">
-    <div class="text-base cursor-pointer font-medium hover:text-blue-600" (click)="scrollToSection('fonctionnalites')">Fonctionnalités</div>
-    <div class="text-base cursor-pointer font-medium hover:text-blue-600" (click)="scrollToSection('tarification')">Tarification</div>
-    <div class="text-base cursor-pointer font-medium hover:text-blue-600" (click)="scrollToSection('contact')">Contact</div>
+    <div class="text-base cursor-pointer font-medium hover:text-blue-600" (click)="scrollToSection('fonctionnalites')">
+      Fonctionnalités</div>
+    <div class="text-base cursor-pointer font-medium hover:text-blue-600" (click)="scrollToSection('tarification')">
+      Tarification</div>
+    <div class="text-base cursor-pointer font-medium hover:text-blue-600" (click)="scrollToSection('contact')">Contact
+    </div>
     <div #menuContainerRef class="group relative inline-block">
-      <span class="text-base font-medium cursor-pointer hover:text-blue-600" (click)="toggleAccountMenu($event)">Compte</span>
+      <span class="text-base font-medium cursor-pointer hover:text-blue-600"
+        (click)="toggleAccountMenu($event)">Compte</span>
       <div *ngIf="accountMenuOpened" class="absolute right-0 w-40 py-2 mt-2 bg-white rounded-md shadow-md">
         <div *ngIf="!userConnected"
           class="block cursor-pointer px-4 py-2 text-sm text-gray-800 hover:bg-blue-500 hover:text-white"
@@ -50,9 +56,12 @@
 
   <!-- Menu burger pour les petits écrans -->
   <div #menuBurger class="lg:hidden absolute top-full left-0 w-full bg-white shadow-md" *ngIf="burgerMenuOpened">
-    <div class="block cursor-pointer px-4 py-2 text-sm text-gray-800 hover:bg-blue-500 hover:text-white" (click)="scrollToSection('fonctionnalites')">Fonctionnalités</div>
-    <div class="block cursor-pointer px-4 py-2 text-sm text-gray-800 hover:bg-blue-500 hover:text-white" (click)="scrollToSection('tarification')">Tarification</div>
-    <div class="block cursor-pointer px-4 py-2 text-sm text-gray-800 hover:bg-blue-500 hover:text-white" (click)="scrollToSection('contact')">Contact</div>
+    <div class="block cursor-pointer px-4 py-2 text-sm text-gray-800 hover:bg-blue-500 hover:text-white"
+      (click)="scrollToSection('fonctionnalites')">Fonctionnalités</div>
+    <div class="block cursor-pointer px-4 py-2 text-sm text-gray-800 hover:bg-blue-500 hover:text-white"
+      (click)="scrollToSection('tarification')">Tarification</div>
+    <div class="block cursor-pointer px-4 py-2 text-sm text-gray-800 hover:bg-blue-500 hover:text-white"
+      (click)="scrollToSection('contact')">Contact</div>
     <div *ngIf="!userConnected"
       class="block cursor-pointer px-4 py-2 text-sm text-gray-800 hover:bg-blue-500 hover:text-white"
       (click)="onAccountMenuOptionClick('Se connecter')">
@@ -77,7 +86,7 @@
 </header>
 
 <main class="flex-1">
-  <section class="w-full h-screen pt-20 md:pt-24 lg:pt-32 border-y px-2 md:px-0">
+  <section id="landing" class="w-full h-screen pt-20 md:pt-24 lg:pt-32 border-y px-2 md:px-0">
     <div class="px-4 md:px-6 space-y-10 xl:space-y-16 flex items-center justify-center h-full"
       style="margin-top: -5rem;">
       <div class="grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16">
@@ -104,7 +113,8 @@
       </div>
     </div>
   </section>
-  <section id="fonctionnalites" class="flex justify-center items-center w-full py-12 md:py-24 lg:py-32 px-2 md:px-0 pt-16">
+  <section id="fonctionnalites"
+    class="flex justify-center items-center w-full py-12 md:py-24 lg:py-20 px-2 md:px-0 pt-16">
     <div class="container space-y-12 px-4 md:px-6">
       <div class="flex flex-col items-center justify-center space-y-4 text-center">
         <div class="space-y-2">
@@ -196,7 +206,8 @@
       </div>
     </div>
   </section>
-  <section id="tarification" class="flex justify-center items-center w-full py-16 md:py-32 lg:py-40 bg-gray-100 px-2 md:px-0">
+  <section id="tarification"
+    class="flex justify-center items-center w-full py-12 md:py-32 lg:py-20 bg-gray-100 px-2 md:px-0">
     <div class="container grid items-center justify-center gap-6 px-4 md:px-6">
       <div class="space-y-4 text-center mx-auto">
         <h2 class="text-4xl font-bold tracking-tighter sm:text-5xl">Tarification</h2>
@@ -354,15 +365,14 @@
       </div>
     </div>
   </section>
-  <section id="contact" class="flex justify-center items-center w-full py-12 md:py-24 lg:py-32 px-2 md:px-0">
+  <section id="contact" class="flex justify-center items-center w-full py-12 md:py-24 lg:py-20 px-2 md:px-0">
     <div class="container space-y-12 px-4 md:px-6">
       <div class="flex flex-col items-center justify-center space-y-4 text-center">
         <div class="space-y-2">
           <h2 class="text-4xl font-bold tracking-tighter sm:text-5xl">Contactez-nous</h2>
           <p
             class="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-            Vous avez des questions ? Vous voulez en savoir plus ? Contactez-nous et nous vous répondrons sous
-            peu.
+            Vous avez des questions ? Vous voulez en savoir plus ? Contactez-nous et nous vous répondrons dans les plus bref délais.
           </p>
         </div>
       </div>
