@@ -26,19 +26,34 @@ export class HomeComponent {
     }
   }
 
+  scrollToSection(sectionId: string): void {
+    if (this.burgerMenuOpened) {
+      this.burgerMenuOpened = !this.burgerMenuOpened;
+    }
+  
+    setTimeout(() => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+        const headerHeight = 64;
+        const position = sectionTop - headerHeight;
+        window.scrollTo({ top: position, behavior: 'smooth' });
+      }
+    }, 50);
+  }
+
   toggleAccountMenu(event: MouseEvent) {
     event.stopPropagation();
     this.accountMenuOpened = !this.accountMenuOpened;
   }
 
-  toggleBurgerMenu(event: MouseEvent) {
+  toggleBurgerMenu(event: MouseEvent): void {
     event.stopPropagation();
     this.burgerMenuOpened = !this.burgerMenuOpened;
   }
 
   onAccountMenuOptionClick(option: string) {
     console.log(option);
-    // Traitez l'option de menu sélectionnée ici
-    this.accountMenuOpened = false; // Ferme le menu compte après la sélection d'une option
+    this.accountMenuOpened = false;
   }
 }

@@ -18,9 +18,9 @@
 
   <!-- Navigation principale pour les grands écrans -->
   <nav class="hidden lg:flex ml-auto gap-4 sm:gap-6 items-center">
-    <a class="text-base font-medium hover:text-blue-600" href="#fonctionnalites">Fonctionnalités</a>
-    <a class="text-base font-medium hover:text-blue-600" href="#tarification">Tarification</a>
-    <a class="text-base font-medium hover:text-blue-600" href="#contact">Contact</a>
+    <div class="text-base cursor-pointer font-medium hover:text-blue-600" (click)="scrollToSection('fonctionnalites')">Fonctionnalités</div>
+    <div class="text-base cursor-pointer font-medium hover:text-blue-600" (click)="scrollToSection('tarification')">Tarification</div>
+    <div class="text-base cursor-pointer font-medium hover:text-blue-600" (click)="scrollToSection('contact')">Contact</div>
     <div #menuContainerRef class="group relative inline-block">
       <span class="text-base font-medium cursor-pointer hover:text-blue-600" (click)="toggleAccountMenu($event)">Compte</span>
       <div *ngIf="accountMenuOpened" class="absolute right-0 w-40 py-2 mt-2 bg-white rounded-md shadow-md">
@@ -50,9 +50,9 @@
 
   <!-- Menu burger pour les petits écrans -->
   <div #menuBurger class="lg:hidden absolute top-full left-0 w-full bg-white shadow-md" *ngIf="burgerMenuOpened">
-    <a class="block cursor-pointer px-4 py-2 text-sm text-gray-800 hover:bg-blue-500 hover:text-white" href="#fonctionnalites" (click)="toggleBurgerMenu($event)">Fonctionnalités</a>
-    <a class="block cursor-pointer px-4 py-2 text-sm text-gray-800 hover:bg-blue-500 hover:text-white" href="#tarification" (click)="toggleBurgerMenu($event)">Tarification</a>
-    <a class="block cursor-pointer px-4 py-2 text-sm text-gray-800 hover:bg-blue-500 hover:text-white" href="#contact" (click)="toggleBurgerMenu($event)">Contact</a>
+    <div class="block cursor-pointer px-4 py-2 text-sm text-gray-800 hover:bg-blue-500 hover:text-white" (click)="scrollToSection('fonctionnalites')">Fonctionnalités</div>
+    <div class="block cursor-pointer px-4 py-2 text-sm text-gray-800 hover:bg-blue-500 hover:text-white" (click)="scrollToSection('tarification')">Tarification</div>
+    <div class="block cursor-pointer px-4 py-2 text-sm text-gray-800 hover:bg-blue-500 hover:text-white" (click)="scrollToSection('contact')">Contact</div>
     <div *ngIf="!userConnected"
       class="block cursor-pointer px-4 py-2 text-sm text-gray-800 hover:bg-blue-500 hover:text-white"
       (click)="onAccountMenuOptionClick('Se connecter')">
@@ -104,7 +104,7 @@
       </div>
     </div>
   </section>
-  <section id="fonctionnalites" class="flex justify-center items-center w-full py-12 md:py-24 lg:py-32 px-2 md:px-0">
+  <section id="fonctionnalites" class="flex justify-center items-center w-full py-12 md:py-24 lg:py-32 px-2 md:px-0 pt-16">
     <div class="container space-y-12 px-4 md:px-6">
       <div class="flex flex-col items-center justify-center space-y-4 text-center">
         <div class="space-y-2">
