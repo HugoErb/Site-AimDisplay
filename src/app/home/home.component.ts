@@ -1,18 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild} from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  menuOuvert: boolean = false;
 
-  constructor() { }
+  @ViewChild('menuContainerRef') menuContainerRef!: ElementRef;
 
-  onMenuOptionClick(option: string): void {
-    console.log('Menu option clicked:', option);
-    // Logique pour gérer le clic sur les options du menu
+  @HostListener('document:click', ['$event'])
+  cliquerHorsDuMenu(event: MouseEvent) {
+    // Vérifiez si le clic est en dehors du conteneur du menu
+    if (this.menuOuvert && !this.menuContainerRef.nativeElement.contains(event.target)) {
+      this.menuOuvert = false;
+    }
+  }
+
+  basculerMenu() {
+    this.menuOuvert = !this.menuOuvert;
+  }
+
+  onMenuOptionClick(option: string) {
+    console.log(option);
+    // Traitez l'option de menu sélectionnée ici
+    // ...
   }
 }
