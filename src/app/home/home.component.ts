@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, ViewChild} from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,28 +6,39 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  menuOuvert: boolean = false;
+  userConnected: boolean = false;
+  accountMenuOpened: boolean = false;
+  burgerMenuOpened: boolean = false;
 
   @ViewChild('menuContainerRef') menuContainerRef!: ElementRef;
+  @ViewChild('menuBurger') menuBurger!: ElementRef;
 
   @HostListener('document:click', ['$event'])
-  cliquerHorsDuMenu(event: MouseEvent) {
-    // Vérifiez si le clic est en dehors du conteneur du menu
-    if (this.menuOuvert && !this.menuContainerRef.nativeElement.contains(event.target)) {
-      this.menuOuvert = false;
+  onClickOutside(event: MouseEvent) {
+    if (this.accountMenuOpened && !this.menuContainerRef.nativeElement.contains(event.target)) {
+      this.accountMenuOpened = false;
+    }
+    if (this.burgerMenuOpened && !this.menuBurger.nativeElement.contains(event.target)) {
+      this.burgerMenuOpened = false;
     }
   }
 
-  basculerMenu() {
-    this.menuOuvert = !this.menuOuvert;
+  toggleAccountMenu(event: MouseEvent) {
+    event.stopPropagation();
+    this.accountMenuOpened = !this.accountMenuOpened;
   }
 
-  onMenuOptionClick(option: string) {
+  toggleBurgerMenu(event: MouseEvent) {
+    event.stopPropagation();
+    this.burgerMenuOpened = !this.burgerMenuOpened;
+  }
+
+  onAccountMenuOptionClick(option: string) {
     console.log(option);
     // Traitez l'option de menu sélectionnée ici
-    // ...
+    this.accountMenuOpened = false; // Ferme le menu compte après la sélection d'une option
   }
 }
