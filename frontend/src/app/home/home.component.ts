@@ -56,4 +56,7 @@ export class HomeComponent {
     console.log(option);
     this.accountMenuOpened = false;
   }
+
+  sendMail() {
+  }
 }

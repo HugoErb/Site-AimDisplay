@@ -372,7 +372,8 @@
           <h2 class="text-4xl font-bold tracking-tighter sm:text-5xl">Contactez-nous</h2>
           <p
             class="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-            Vous avez des questions ? Vous voulez en savoir plus ? Contactez-nous et nous vous répondrons dans les plus bref délais.
+            Vous avez des questions ? Vous voulez en savoir plus ? Contactez-nous et nous vous répondrons dans les plus
+            bref délais.
           </p>
         </div>
       </div>
@@ -392,7 +393,8 @@
               class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               for="message">Message</label><textarea
               class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px]"
-              id="message" placeholder="Entrez votre message"></textarea></div><button
+              id="message" placeholder="Entrez votre message"></textarea></div>
+          <button (click)="sendMail()"
             class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-blue-500 text-white hover:bg-blue-700">Envoyer
             le message</button>
         </div>
