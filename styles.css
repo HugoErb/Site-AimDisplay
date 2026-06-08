@@ -1,0 +1,77 @@
+:root {
+	--font-sans: Inter, ui-sans-serif, system-ui, Segoe UI, Arial, sans-serif;
+	--color-main-bg: #fafbfb;
+	--color-main-dark-bg: #191a1a;
+	--color-secondary-dark-bg: #232726;
+	--color-prime-blue: #3b80f6;
+	--color-prime-blue-light: #60a5fa;
+	--color-hover-prime-blue: #1e63e0;
+}
+
+html {
+	scroll-padding-top: 6rem;
+}
+
+.font-sans {
+	font-family: var(--font-sans);
+}
+
+.bg-main-bg {
+	background-color: var(--color-main-bg);
+}
+
+.bg-main-dark-bg {
+	background-color: var(--color-main-dark-bg);
+}
+
+.bg-main-dark-bg\/88 {
+	background-color: rgba(25, 26, 26, 0.88);
+}
+
+.bg-secondary-dark-bg {
+	background-color: var(--color-secondary-dark-bg);
+}
+
+.bg-prime-blue {
+	background-color: var(--color-prime-blue);
+}
+
+.hover\:bg-hover-prime-blue:hover {
+	background-color: var(--color-hover-prime-blue);
+}
+
+.text-prime-blue {
+	color: var(--color-prime-blue);
+}
+
+.text-prime-blue-light {
+	color: var(--color-prime-blue-light);
+}
+
+.shadow-panel {
+	box-shadow: 0 26px 90px rgba(0, 0, 0, 0.34);
+}
+
+.shadow-lg.shadow-prime-blue\/25 {
+	box-shadow:
+		0 10px 15px -3px rgba(59, 128, 246, 0.25),
+		0 4px 6px -4px rgba(59, 128, 246, 0.25);
+}
+
+.shadow-lg.shadow-prime-blue\/20 {
+	box-shadow:
+		0 10px 15px -3px rgba(59, 128, 246, 0.2),
+		0 4px 6px -4px rgba(59, 128, 246, 0.2);
+}
+
+iconify-icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+}
+
+.carousel-dot.is-active {
+	width: 2rem;
+	background: var(--color-prime-blue);
+	opacity: 1;
+}
