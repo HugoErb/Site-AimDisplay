@@ -1,415 +1,149 @@
-<!doctype html>
-<html lang="fr" class="scroll-smooth">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta
-			name="description"
-			content="Aim Display aide les clubs de tir sportif à gérer leurs compétitions, inscriptions, scores, classements en direct et rapports PDF."
-		/>
-		<meta name="robots" content="index, follow, max-image-preview:large" />
-		<meta name="theme-color" content="#191a1a" />
-		<meta name="application-name" content="Aim Display" />
-		<meta property="og:type" content="website" />
-		<meta property="og:locale" content="fr_FR" />
-		<meta property="og:site_name" content="Aim Display" />
-		<meta property="og:title" content="Aim Display - Logiciel de compétition de tir sportif" />
-		<meta
-			property="og:description"
-			content="Gérez vos compétitions de tir sportif, inscriptions, scores, classements en direct et rapports PDF avec Aim Display."
-		/>
-		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:title" content="Aim Display - Logiciel de compétition de tir sportif" />
-		<meta
-			name="twitter:description"
-			content="Gérez vos compétitions de tir sportif, inscriptions, scores, classements en direct et rapports PDF avec Aim Display."
-		/>
-		<link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
-		<title>Aim Display - Logiciel de compétition de tir sportif</title>
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "WebPage",
-				"name": "Aim Display - Logiciel de compétition de tir sportif",
-				"description": "Aim Display aide les clubs de tir sportif à gérer leurs compétitions, inscriptions, scores, classements en direct et rapports PDF.",
-				"inLanguage": "fr-FR",
-				"about": {
-					"@type": "SoftwareApplication",
-					"name": "Aim Display",
-					"applicationCategory": "SportsApplication",
-					"operatingSystem": "Windows 10, Windows 11",
-					"softwareVersion": "1.0.6"
-				}
-			}
-		</script>
-		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-		<script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
-		<link rel="stylesheet" href="styles.css" />
-	</head>
-	<body class="bg-main-dark-bg font-sans text-white antialiased">
-		<header class="sticky top-0 z-50 border-b border-white/10 bg-main-dark-bg/88 backdrop-blur-xl">
-			<nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-				<a href="#" class="flex items-center gap-3">
-					<img src="assets/logo.svg" alt="Logo Aim Display" class="h-12 w-12" />
-					<span class="text-left text-xl font-bold leading-none tracking-normal text-prime-blue">
-						Aim
-						<br />
-						Display
-					</span>
-				</a>
-				<div class="hidden items-center gap-7 text-sm font-medium text-white/62 md:flex">
-					<a href="#fonctionnalites" class="transition hover:text-white">Fonctionnalités</a>
-					<a href="#cible" class="transition hover:text-white">La cible</a>
-					<a href="#pourquoi" class="transition hover:text-white">Pourquoi</a>
-					<a href="#telechargement" class="transition hover:text-white">Télécharger</a>
-				</div>
-			</nav>
-		</header>
+﻿<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Aim Display accompagne les clubs de tir sportif : compétitions, inscriptions, scores, classements en direct et rapports PDF, dans une seule application." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#191a1a" />
+    <meta name="application-name" content="Aim Display" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Aim Display" />
+    <meta property="og:title" content="Aim Display — Votre compétition, en toute simplicité" />
+    <meta property="og:description" content="De la première inscription au classement final. Le logiciel pensé pour les clubs de tir sportif." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Aim Display — Gestion de compétitions de tir sportif" />
+    <meta name="twitter:description" content="Compétitions, tireurs, classements en direct et rapports PDF. Tout votre concours dans une seule application." />
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+    <link rel="preload" href="assets/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <title>Aim Display — Logiciel de compétition de tir sportif</title>
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"WebPage","name":"Aim Display — Logiciel de compétition de tir sportif","description":"Gestion des compétitions de tir sportif, inscriptions, scores, classements en direct et rapports PDF.","inLanguage":"fr-FR","about":{"@type":"SoftwareApplication","name":"Aim Display","applicationCategory":"SportsApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"1.0.6"}}
+    </script>
+  </head>
+  <body>
+    <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" /></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 15v5h14v-5" /></symbol>
+      <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 3h8v6a4 4 0 0 1-8 0V3Zm0 2H4v2a4 4 0 0 0 4 4m8-6h4v2a4 4 0 0 1-4 4m-4 2v5m-5 3h10m-8 0v-3h6v3" /></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3" /><path d="M3 21v-3a6 6 0 0 1 12 0v3m2-17a3 3 0 0 1 0 6m1 5a5 5 0 0 1 3 4v2" /></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z" /></symbol>
+      <symbol id="i-screen" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="13" rx="2" /><path d="M12 16v5m-4 0h8m-9-9 3-3 3 2 4-5" /></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm0 0v6h6M8 13h8m-8 4h5" /></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 3v17h17M9 15v-4m5 4V6m5 9v-6" /></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" /></symbol>
+      <symbol id="i-windows" viewBox="0 0 24 24"><path d="M3 5l7-1v7H3V5Zm10-1 8-1v8h-8V4ZM3 14h7v7l-7-1v-6Zm10 0h8v9l-8-1v-8Z" fill="currentColor" stroke="none" /></symbol>
+      <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 8a16 16 0 0 1 20 0M5 12a11 11 0 0 1 14 0m-11 4a6 6 0 0 1 8 0" /><circle cx="12" cy="20" r="1" /></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></symbol>
+      <symbol id="i-expand" viewBox="0 0 24 24"><path d="M14 3h7v7m0-7-8 8M10 21H3v-7m0 7 8-8" /></symbol>
+    </svg>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-		<main>
-			<section class="relative overflow-hidden bg-main-dark-bg">
-				<div
-					class="absolute inset-0 bg-[radial-gradient(circle_at_76%_18%,rgba(59,128,246,0.24),transparent_34%),linear-gradient(180deg,#191a1a_0%,#232726_100%)]"
-				></div>
-				<div
-					class="relative mx-auto grid max-w-[1400px] gap-16 px-5 pb-16 pt-14 lg:grid-cols-[minmax(0,0.68fr)_minmax(0,1.08fr)] lg:gap-20 lg:px-8 lg:pb-20 lg:pt-18"
-				>
-					<div class="flex flex-col justify-center">
-						<div class="mb-4 flex items-center gap-6">
-							<img src="assets/logo.svg" alt="Logo Aim Display" class="h-28 w-28" />
-							<h1 class="text-left text-5xl font-bold leading-[1.02] tracking-normal text-prime-blue md:text-7xl">
-								Aim
-								<br />
-								Display
-							</h1>
-						</div>
-						<p class="mt-3 max-w-xl text-xl font-semibold leading-tight text-prime-blue-light sm:text-2xl">
-							Gérez vos compétitions de tir sportif plus simplement.
-						</p>
-						<p class="mt-4 max-w-xl text-base leading-7 text-white/72 sm:text-lg">
-							Aim Display aide les clubs à organiser leurs compétitions, suivre les scores et afficher les résultats simplement.
-						</p>
-						<div class="mt-8 flex flex-col gap-3 sm:flex-row">
-							<a
-								href="#telechargement"
-								class="inline-flex items-center justify-center gap-2 rounded-xl bg-prime-blue px-5 py-3 text-base font-semibold text-white shadow-lg shadow-prime-blue/25 transition hover:bg-hover-prime-blue"
-							>
-								<iconify-icon icon="material-symbols:download-rounded" class="text-xl"></iconify-icon>
-								Télécharger Aim Display
-							</a>
-							<a
-								href="#fonctionnalites"
-								class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/12 bg-white/7 px-5 py-3 text-base font-semibold text-white transition hover:bg-white/12"
-							>
-								<iconify-icon icon="lucide:list-checks"></iconify-icon>
-								Fonctionnalités
-							</a>
-						</div>
-					</div>
+    <header class="site-header">
+      <nav class="container navigation" aria-label="Navigation principale">
+        <a class="brand" href="#accueil" aria-label="Aim Display, accueil"><img src="assets/logo.svg" alt="" width="36" height="36" /><span>Aim <strong>Display</strong></span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-links" aria-label="Ouvrir le menu" hidden><span></span><span></span></button>
+        <div class="navigation-links" id="navigation-links">
+          <a href="#fonctionnalites">Fonctionnalités</a>
+          <a href="#fonctionnement">Comment ça marche</a>
+          <a href="#pourquoi">L’esprit Aim Display</a>
+        </div>
+        <a class="button button-small button-primary nav-download" href="#telechargement">Télécharger <svg class="icon" aria-hidden="true"><use href="#i-download" /></svg></a>
+      </nav>
+    </header>
 
-					<div class="hidden w-full max-w-[780px] justify-self-end lg:block">
-						<div class="relative">
-							<div class="carousel-frame overflow-hidden rounded-2xl shadow-panel">
-								<div class="overflow-hidden rounded-2xl bg-main-bg">
-									<div class="flex items-center justify-end gap-2 border-b border-slate-200 bg-white px-4 py-3">
-										<span class="h-3 w-3 rounded-full bg-emerald-400"></span>
-										<span class="h-3 w-3 rounded-full bg-amber-300"></span>
-										<span class="h-3 w-3 rounded-full bg-red-400"></span>
-									</div>
-									<div class="carousel-track flex transition-transform duration-700 ease-out">
-										<figure class="w-full shrink-0">
-											<iframe
-												src="assets/mockups/screen-1.html"
-												title="Apercu Aim Display - classement en direct"
-												class="aspect-[17/9] w-full border-0"
-												loading="lazy"
-											></iframe>
-										</figure>
-										<figure class="w-full shrink-0">
-											<img
-												src="assets/screenshots/screen-2.png"
-												alt="Capture Aim Display 2"
-												class="aspect-[17/9] w-full object-contain"
-											/>
-										</figure>
-										<figure class="w-full shrink-0">
-											<img
-												src="assets/screenshots/screen-3.png"
-												alt="Capture Aim Display 3"
-												class="aspect-[17/9] w-full object-contain"
-											/>
-										</figure>
-										<figure class="w-full shrink-0">
-											<img
-												src="assets/screenshots/screen-4.png"
-												alt="Capture Aim Display 4"
-												class="aspect-[17/9] w-full object-contain"
-											/>
-										</figure>
-										<figure class="w-full shrink-0">
-											<img
-												src="assets/screenshots/screen-5.png"
-												alt="Capture Aim Display 5"
-												class="aspect-[17/9] w-full object-contain"
-											/>
-										</figure>
-									</div>
-								</div>
-							</div>
+    <main id="contenu">
+      <section class="hero" id="accueil" aria-labelledby="hero-title">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-orbit" aria-hidden="true"></div>
+        <div class="container hero-content">
+          <div class="hero-copy">
+            <h1 id="hero-title">Votre compétition<br /><span>En toute simplicité</span></h1>
+            <p class="hero-description">De la première inscription au classement final.<br class="desktop-break" /> Gérez vos compétitions de tir sportif et partagez vos résultats avec Aim Display.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#telechargement"><svg class="icon" aria-hidden="true"><use href="#i-download" /></svg> Télécharger Aim Display</a>
+              <a class="button button-secondary" href="#apercu">Découvrir le logiciel <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+            </div>
+            <p class="platform-note"><svg class="icon" aria-hidden="true"><use href="#i-windows" /></svg> Disponible sur Windows 10 et 11</p>
+          </div>
 
-							<div class="carousel-dots mt-5 flex justify-center gap-2">
-								<button
-									type="button"
-									class="carousel-dot is-active h-2.5 w-2.5 cursor-pointer rounded-full bg-white/60 opacity-70 transition-all"
-									aria-label="Voir l'image 1"
-								></button>
-								<button
-									type="button"
-									class="carousel-dot h-2.5 w-2.5 cursor-pointer rounded-full bg-white/60 opacity-70 transition-all"
-									aria-label="Voir l'image 2"
-								></button>
-								<button
-									type="button"
-									class="carousel-dot h-2.5 w-2.5 cursor-pointer rounded-full bg-white/60 opacity-70 transition-all"
-									aria-label="Voir l'image 3"
-								></button>
-								<button
-									type="button"
-									class="carousel-dot h-2.5 w-2.5 cursor-pointer rounded-full bg-white/60 opacity-70 transition-all"
-									aria-label="Voir l'image 4"
-								></button>
-                                <button
-									type="button"
-									class="carousel-dot h-2.5 w-2.5 cursor-pointer rounded-full bg-white/60 opacity-70 transition-all"
-									aria-label="Voir l'image 5"
-								></button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+          <div class="product-showcase" id="apercu" data-reveal>
+            <div class="showcase-topline"><span><span class="small-cross" aria-hidden="true">+</span> VOTRE NOUVEL ESPACE DE COMPÉTITION</span><span class="showcase-index" aria-hidden="true">01 — 05</span></div>
+            <div class="preview-tabs" role="tablist" aria-label="Aperçus du logiciel">
+              <button class="preview-tab" id="tab-classement" type="button" role="tab" aria-selected="true" aria-controls="panel-classement" tabindex="0"><svg class="icon" aria-hidden="true"><use href="#i-screen" /></svg> Classement en direct</button>
+              <button class="preview-tab" id="tab-tireurs" type="button" role="tab" aria-selected="false" aria-controls="panel-tireurs" tabindex="-1"><svg class="icon" aria-hidden="true"><use href="#i-users" /></svg> Tireurs</button>
+              <button class="preview-tab" id="tab-inscriptions" type="button" role="tab" aria-selected="false" aria-controls="panel-inscriptions" tabindex="-1"><svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg> Inscriptions</button>
+              <button class="preview-tab" id="tab-rapports" type="button" role="tab" aria-selected="false" aria-controls="panel-rapports" tabindex="-1"><svg class="icon" aria-hidden="true"><use href="#i-file" /></svg> Rapports PDF</button>
+              <button class="preview-tab" id="tab-aide" type="button" role="tab" aria-selected="false" aria-controls="panel-aide" tabindex="-1"><svg class="icon" aria-hidden="true"><use href="#i-shield" /></svg> Prise en main</button>
+            </div>
+            <div class="app-window">
+              <div class="preview-panel" id="panel-classement" role="tabpanel" aria-labelledby="tab-classement" tabindex="0" data-caption="Un classement lisible, pour les tireurs comme pour le public." data-full="assets/mockups/screen-1.html">
+                <iframe src="assets/mockups/screen-1.html" title="Démonstration du classement par catégorie dans Aim Display" tabindex="-1"></iframe>
+              </div>
+              <div class="preview-panel" id="panel-tireurs" role="tabpanel" aria-labelledby="tab-tireurs" tabindex="0" data-caption="Tous vos tireurs et leurs résultats, réunis dans une seule interface." data-full="assets/screenshots/screen-2.png" hidden><img src="assets/screenshots/screen-2.png" alt="Interface Aim Display : liste des tireurs, filtres par compétition et scores" width="1920" height="1017" loading="lazy" /></div>
+              <div class="preview-panel" id="panel-inscriptions" role="tabpanel" aria-labelledby="tab-inscriptions" tabindex="0" data-caption="Une inscription claire, du club du tireur jusqu’à ses séries de scores." data-full="assets/screenshots/screen-3.png" hidden><img src="assets/screenshots/screen-3.png" alt="Interface Aim Display : formulaire de création d’un tireur et saisie des scores" width="1920" height="1017" loading="lazy" /></div>
+              <div class="preview-panel" id="panel-rapports" role="tabpanel" aria-labelledby="tab-rapports" tabindex="0" data-caption="Les classements et les statistiques, prêts à être partagés en PDF." data-full="assets/screenshots/screen-4.png" hidden><img src="assets/screenshots/screen-4.png" alt="Interface Aim Display : génération de rapports de compétition et de tireur" width="1920" height="1017" loading="lazy" /></div>
+              <div class="preview-panel" id="panel-aide" role="tabpanel" aria-labelledby="tab-aide" tabindex="0" data-caption="Un guide intégré pour vous accompagner à chaque étape." data-full="assets/screenshots/screen-5.png" hidden><img src="assets/screenshots/screen-5.png" alt="Interface Aim Display : aide et tutoriel de démarrage" width="1920" height="1017" loading="lazy" /></div>
+            </div>
+            <div class="preview-caption"><p id="preview-description" aria-live="polite">Un classement lisible, pour les tireurs comme pour le public.</p><a id="preview-expand" href="assets/mockups/screen-1.html" target="_blank" rel="noopener">Agrandir <svg class="icon" aria-hidden="true"><use href="#i-expand" /></svg><span class="sr-only"> (nouvel onglet)</span></a></div>
+            <noscript><p class="noscript-note">Autres aperçus : <a href="assets/screenshots/screen-2.png">tireurs</a>, <a href="assets/screenshots/screen-3.png">inscriptions</a>, <a href="assets/screenshots/screen-4.png">rapports PDF</a>, <a href="assets/screenshots/screen-5.png">aide</a>.</p></noscript>
+          </div>
+          <div class="hero-bottom"><span>Un seul outil. Toute votre compétition.</span><div><span>Organiser</span><span class="separator" aria-hidden="true"></span><span>Suivre</span><span class="separator" aria-hidden="true"></span><span>Partager</span></div></div>
+        </div>
+      </section>
 
-			<section id="fonctionnalites" class="bg-main-bg py-16 text-slate-900 lg:py-24">
-				<div class="mx-auto max-w-7xl px-5 lg:px-8">
-					<div class="flex max-w-3xl flex-col gap-4">
-						<h2 class="text-3xl font-bold tracking-normal sm:text-4xl">Tout le cycle d'une compétition</h2>
-						<p class="text-lg leading-8 text-slate-600">
-							Les fonctionnalités essentielles pour organiser une compétition, suivre les participants et partager des résultats clairs.
-						</p>
-					</div>
-					<div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-						<article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-							<iconify-icon icon="octicon:trophy-24" class="text-3xl text-prime-blue"></iconify-icon>
-							<h3 class="mt-2 text-lg font-bold">Gestion des compétitions</h3>
-							<p class="mt-3 text-sm leading-6 text-slate-600">
-								Créez vos compétitions, renseignez les dates, le lieu, les tarifs et retrouvez-les facilement pour les modifier ou les
-								supprimer.
-							</p>
-						</article>
-						<article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-							<iconify-icon icon="lucide:user-round" class="text-3xl text-prime-blue"></iconify-icon>
-							<h3 class="mt-2 text-lg font-bold">Inscriptions des tireurs</h3>
-							<p class="mt-3 text-sm leading-6 text-slate-600">
-								Inscrivez chaque tireur avec son club, sa compétition, sa distance, son arme, sa catégorie et sa classification
-								para-tir si besoin.
-							</p>
-						</article>
-						<article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-							<iconify-icon icon="lucide:shield" class="text-3xl text-prime-blue"></iconify-icon>
-							<h3 class="mt-2 text-lg font-bold">Clubs participants</h3>
-							<p class="mt-3 text-sm leading-6 text-slate-600">
-								Gardez une liste claire des clubs engagés afin de rattacher rapidement les tireurs à leur structure.
-							</p>
-						</article>
-						<article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-							<iconify-icon icon="streamline:screen-1-remix" class="text-3xl text-prime-blue"></iconify-icon>
-							<h3 class="mt-2 text-lg font-bold">Classement en direct</h3>
-							<p class="mt-3 text-sm leading-6 text-slate-600">
-								Lancez un affichage plein écran pour que les tireurs et le public suivent le classement par catégorie de la
-								compétition en temps réel.
-							</p>
-						</article>
-						<article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-							<iconify-icon icon="mdi:file-pdf-box" class="text-3xl text-prime-blue"></iconify-icon>
-							<h3 class="mt-2 text-lg font-bold">Rapports de compétition</h3>
-							<p class="mt-3 text-sm leading-6 text-slate-600">
-								Générez des rapports PDF avec les classements, les résultats détaillés, les statistiques d'inscription, les scores et
-								les recettes du club.
-							</p>
-						</article>
-						<article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-							<iconify-icon icon="lucide:bar-chart-3" class="text-3xl text-prime-blue"></iconify-icon>
-							<h3 class="mt-2 text-lg font-bold">Rapports pour les tireurs</h3>
-							<p class="mt-3 text-sm leading-6 text-slate-600">
-								Éditez un bilan par tireur avec ses résultats, ses statistiques et des conseils personnalisés à partir de ses
-								performances.
-							</p>
-						</article>
-					</div>
-				</div>
-			</section>
+      <section class="section features light-section" id="fonctionnalites" aria-labelledby="features-title">
+        <div class="container">
+          <div class="section-heading" data-reveal><div><p class="eyebrow">TOUT EST À SA PLACE</p><h2 id="features-title">Moins de gestion.<br /><span class="muted-heading">Plus de compétition.</span></h2></div><p>Les outils essentiels, réunis dans une interface claire. Concentrez-vous sur ce qui compte : votre événement.</p></div>
+          <div class="feature-grid">
+            <article class="feature-card feature-live" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-screen" /></svg></span>
+              <p class="card-label">AU CŒUR DU CONCOURS</p><h3>Les résultats prennent<br />vie, en direct.</h3><p>Diffusez les classements par catégorie sur un second écran ou une télévision reliée à un PC. Le public suit la compétition, au rythme des scores.</p>
+              <div class="live-visual" aria-hidden="true"><div class="live-visual-header"><span><span class="status-dot"></span> CLASSEMENT</span><span>EN DIRECT</span></div><div class="score-line"><span class="rank gold">1</span><span class="score-bar bar-first"></span><svg class="icon"><use href="#i-trophy" /></svg></div><div class="score-line"><span class="rank">2</span><span class="score-bar bar-second"></span><span class="score-end"></span></div><div class="score-line"><span class="rank">3</span><span class="score-bar bar-third"></span><span class="score-end"></span></div></div>
+              <a class="text-link" href="#apercu" data-preview="tab-classement">Voir l’aperçu <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+            </article>
+            <article class="feature-card" data-reveal><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-trophy" /></svg></span><h3>Vos compétitions,<br />bien organisées.</h3><p>Dates, lieu, tarifs : préparez votre concours et retrouvez toutes ses informations au même endroit.</p><span class="feature-tag">De la préparation au jour J</span></article>
+            <article class="feature-card" data-reveal><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-users" /></svg></span><h3>Chaque tireur<br />a sa place.</h3><p>Gérez les inscriptions par club, discipline, distance et catégorie, avec la classification para-tir.</p><a class="text-link" href="#apercu" data-preview="tab-inscriptions">Voir les inscriptions <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a></article>
+            <article class="feature-card" data-reveal><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-shield" /></svg></span><h3>Tous les clubs<br />participants.</h3><p>Centralisez les clubs participants et rattachez rapidement chaque tireur à sa structure.</p><span class="feature-tag">Un annuaire facile à retrouver</span></article>
+            <article class="feature-card" data-reveal><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-file" /></svg></span><h3>Des rapports<br />prêts à partager.</h3><p>Exportez les classements, les statistiques et les recettes en PDF. Remettez aussi un bilan personnalisé à chaque tireur.</p><a class="text-link" href="#apercu" data-preview="tab-rapports">Découvrir les rapports <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a></article>
+          </div>
+        </div>
+      </section>
 
-			<section id="cible" class="bg-main-bg pb-16 text-slate-900 lg:pb-24">
-				<div class="mx-auto grid max-w-7xl gap-5 px-5 lg:grid-cols-2 lg:px-8">
-					<div class="rounded-2xl bg-secondary-dark-bg p-8 text-white">
-						<h2 class="flex items-center gap-3 text-3xl font-bold">
-							<iconify-icon icon="lucide:target" class="text-prime-blue-light"></iconify-icon>
-							La cible
-						</h2>
-						<p class="mt-4 leading-7 text-white/64">Aim Display s'adresse aux clubs de tir sportif qui souhaitent :</p>
-						<div class="mt-5 space-y-4 text-sm leading-6 text-white/64">
-							<p>
-								<strong class="text-white">Organiser des compétitions simplement</strong>
-								<br />
-								Préparer les évenements sportifs en avance ou le jour J, inscrire les tireurs et suivre les résultats à l'aide d'un seul outil.
-							</p>
-							<p>
-								<strong class="text-white">Gagner du temps le jour du concours</strong>
-								<br />
-								Limiter les ressaisies et retrouver rapidement les informations utiles pendant la compétition.
-							</p>
-							<p>
-								<strong class="text-white">Présenter des résultats clairs</strong>
-								<br />
-								Afficher les classements en temps réel au public et remettre des rapports propres et détaillés aux tireurs.
-							</p>
-						</div>
-					</div>
-					<div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-						<h2 class="flex items-center gap-3 text-3xl font-bold">
-							<iconify-icon icon="lucide:list-checks" class="text-prime-blue"></iconify-icon>
-							Fonctionnement
-						</h2>
-						<div class="mt-5 space-y-4 text-sm leading-6 text-slate-600">
-							<p>
-								<strong class="text-slate-900">1. Préparez la compétition</strong>
-								<br />
-								Créez le concours, ajoutez les clubs et inscrivez les tireurs.
-							</p>
-							<p>
-								<strong class="text-slate-900">2. Saisissez les résultats</strong>
-								<br />
-								Renseignez les scores au fil de la compétition. Le classement public se met à jour automatiquement.
-							</p>
-							<p>
-								<strong class="text-slate-900">3. Affichez le classement</strong>
-								<br />
-								Lancez l'affichage sur un second écran, ou une télévision connectée à un PC, pour que les participants suivent les
-								résultats.
-							</p>
-							<p>
-								<strong class="text-slate-900">4. Partagez les rapports</strong>
-								<br />
-								Générez les PDF en fin de concours, conservez un exemplaire pour le club et remettez un rapport personnalisé à chaque
-								tireur.
-							</p>
-						</div>
-					</div>
-				</div>
-			</section>
+      <section class="section workflow" id="fonctionnement" aria-labelledby="workflow-title">
+        <div class="container">
+          <div class="section-heading" data-reveal><div><p class="eyebrow">UN PARCOURS NATUREL</p><h2 id="workflow-title">Du premier inscrit<br />au dernier résultat.</h2></div><p>Quatre étapes, un seul logiciel.<br />Gardez le fil de votre compétition.</p></div>
+          <ol class="steps">
+            <li data-reveal><div class="step-top"><span>01</span><svg class="icon" aria-hidden="true"><use href="#i-trophy" /></svg></div><h3>Préparez</h3><p>Créez la compétition, ajoutez les clubs et inscrivez les tireurs.</p></li>
+            <li data-reveal><div class="step-top"><span>02</span><svg class="icon" aria-hidden="true"><use href="#i-chart" /></svg></div><h3>Suivez</h3><p>Saisissez les scores au fil des séries. Le classement se met à jour automatiquement.</p></li>
+            <li data-reveal><div class="step-top"><span>03</span><svg class="icon" aria-hidden="true"><use href="#i-screen" /></svg></div><h3>Diffusez</h3><p>Affichez les résultats sur un second écran pour les participants et le public.</p></li>
+            <li data-reveal><div class="step-top"><span>04</span><svg class="icon" aria-hidden="true"><use href="#i-file" /></svg></div><h3>Partagez</h3><p>Générez les rapports PDF pour votre club et les bilans individuels des tireurs.</p></li>
+          </ol>
+        </div>
+      </section>
 
-			<section id="pourquoi" class="bg-secondary-dark-bg py-16 text-white lg:py-24">
-				<div class="mx-auto max-w-7xl px-5 lg:px-8">
-					<h2 class="text-3xl font-bold sm:text-4xl">Pourquoi utiliser Aim Display ?</h2>
-					<div class="mt-10 grid gap-4 md:grid-cols-4">
-						<div class="rounded-xl border border-white/10 bg-white/6 p-6">
-							<iconify-icon icon="lucide:timer" class="text-3xl text-prime-blue-light"></iconify-icon>
-							<h3 class="mt-3 font-bold">Gain de temps</h3>
-							<p class="mt-2 text-sm leading-6 text-white/62">
-								Saisissez et mettez à jour les informations simplement et surtout rapidement, que ce soit en amont ou pendant l'événement.
-							</p>
-						</div>
-						<div class="rounded-xl border border-white/10 bg-white/6 p-6">
-							<iconify-icon icon="lucide:database" class="text-3xl text-prime-blue-light"></iconify-icon>
-							<h3 class="mt-3 font-bold">Centralisation</h3>
-							<p class="mt-2 text-sm leading-6 text-white/62">
-								Tout ce dont vous avez besoin pour l'organisation de vos compétitions est réuni dans une interface claire et simple à utiliser.
-							</p>
-						</div>
-						<div class="rounded-xl border border-white/10 bg-white/6 p-6">
-							<iconify-icon icon="lucide:crosshair" class="text-3xl text-prime-blue-light"></iconify-icon>
-							<h3 class="mt-3 font-bold">Pensé pour le tir sportif</h3>
-							<p class="mt-2 text-sm leading-6 text-white/62">Développé par un tireur, pour les tireurs, avec les retours du club de tir sportif Rochefortais et bientôt enrichi par les vôtres.</p>
-						</div>
-						<div class="rounded-xl border border-white/10 bg-white/6 p-6">
-							<iconify-icon icon="lucide:heart-handshake" class="text-3xl text-prime-blue-light"></iconify-icon>
-							<h3 class="mt-3 font-bold">Évolution continue</h3>
-							<p class="mt-2 text-sm leading-6 text-white/62">
-								Le logiciel s'améliore régulièrement pour rester adapté aux besoins des clubs. Nous restons à l'écoute de vos idées et suggestions !
-							</p>
-						</div>
-					</div>
-				</div>
-			</section>
+      <section class="section about" id="pourquoi" aria-labelledby="about-title">
+        <div class="container about-grid">
+          <div class="brand-art" aria-hidden="true" data-reveal><div class="target-ring ring-one"></div><div class="target-ring ring-two"></div><div class="target-ring ring-three"></div><div class="brand-art-center"><img src="assets/logo.svg" width="116" height="116" alt="" /></div><span class="art-label art-label-top">LA PRÉCISION</span><span class="art-label art-label-bottom">AU SERVICE DU CLUB</span><span class="orbit-point point-one"></span><span class="orbit-point point-two"></span></div>
+          <div class="about-copy" data-reveal><p class="eyebrow">L’ESPRIT AIM DISPLAY</p><h2 id="about-title">Né sur le pas de tir.<br /><span class="muted-heading">Pensé pour vous.</span></h2><p>Développé par un tireur, pour les tireurs. Aim Display s’appuie sur les retours du club de tir sportif Rochefortais pour répondre aux besoins du terrain.</p><ul class="benefit-list"><li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg><div><h3>Du temps pour l’essentiel</h3><p>Moins de ressaisies, des informations faciles à retrouver.</p></div></li><li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg><div><h3>Une prise en main accompagnée</h3><p>Une interface claire et un guide intégré au logiciel.</p></div></li><li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg><div><h3>Un logiciel qui évolue avec vous</h3><p>Les retours des clubs font avancer Aim Display.</p></div></li></ul></div>
+        </div>
+      </section>
 
-			<section id="telechargement" class="bg-main-bg py-16 text-slate-900 lg:py-24">
-				<div class="mx-auto max-w-6xl px-5 lg:px-8">
-					<div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm lg:grid lg:grid-cols-[1fr_360px]">
-						<div class="px-8 py-6 lg:px-10 lg:py-7">
-							<h2 class="text-3xl font-bold">Télécharger Aim Display</h2>
-							<p class="mt-4 max-w-2xl text-base leading-7 text-slate-600">
-								Installez l'application sur l'ordinateur du club et préparez votre prochaine compétition dans un outil conçu pour le
-								tir sportif.
-							</p>
-							<div class="mt-4 rounded-xl bg-slate-50 px-5 py-4 text-sm text-slate-700">
-								<p class="font-bold text-slate-900">Prérequis</p>
-								<div class="mt-4 space-y-3">
-									<div class="flex items-center gap-2">
-										<iconify-icon icon="logos:microsoft-windows-icon"></iconify-icon>
-										Windows 10 ou Windows 11
-									</div>
-									<div class="flex items-center gap-2">
-										<iconify-icon icon="lucide:wifi" class="text-prime-blue"></iconify-icon>
-										Connexion internet
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="flex flex-col justify-between bg-main-dark-bg p-8 text-white lg:p-10">
-							<div>
-								<p class="text-sm font-semibold text-prime-blue-light">Version 1.0.6</p>
-								<p class="mt-3 text-xl font-bold">Installation</p>
-								<p class="mt-3 text-sm leading-6 text-white/62">
-									Téléchargez l'installateur, lancez-le, puis ouvrez Aim Display. Créez un compte sur
-									l'application, et c'est parti !
-								</p>
-							</div>
-							<a
-								href="https://github.com/HugoErb/AimDisplay/releases/latest/download/Aim-Display-Setup-1.0.6.exe"
-								class="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-prime-blue px-6 py-3 text-base font-semibold text-white shadow-lg shadow-prime-blue/20 transition hover:bg-hover-prime-blue"
-							>
-								<iconify-icon icon="material-symbols:download-rounded" class="text-xl"></iconify-icon>
-								Télécharger Aim Display
-							</a>
-						</div>
-					</div>
-				</div>
-			</section>
-		</main>
+      <section class="section download-section light-section" id="telechargement" aria-labelledby="download-title">
+        <div class="container">
+          <div class="download-card" data-reveal>
+            <div class="download-copy"><p class="eyebrow">À VOUS DE JOUER</p><h2 id="download-title">Votre prochain concours<br />commence ici.</h2><p>Installez Aim Display sur l’ordinateur du club.<br />Et faites place à la compétition.</p><div class="requirements"><span><svg class="icon" aria-hidden="true"><use href="#i-windows" /></svg> Windows 10 ou 11</span><span><svg class="icon" aria-hidden="true"><use href="#i-wifi" /></svg> Connexion internet</span></div></div>
+            <div class="installer-card"><div class="installer-heading"><img src="assets/logo.svg" alt="" width="48" height="48" /><span class="version-badge">v1.0.6</span></div><h3>Aim Display</h3><p>Votre espace de gestion de tir sportif.</p><a class="button button-primary" href="https://github.com/HugoErb/AimDisplay/releases/latest/download/Aim-Display-Setup-1.0.6.exe"><svg class="icon" aria-hidden="true"><use href="#i-download" /></svg> Télécharger pour Windows</a><span class="installer-note">Installateur Windows · .exe</span></div>
+          </div>
+          <div class="faq" data-reveal><h3>Avant de vous lancer</h3><div class="faq-items"><details><summary>Comment installer Aim Display ?<svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg></summary><p>Téléchargez l’installateur Windows, ouvrez-le et suivez les étapes d’installation. Lancez ensuite Aim Display et créez votre compte dans l’application.</p></details><details><summary>De quoi ai-je besoin ?<svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg></summary><p>D’un ordinateur sous Windows 10 ou Windows 11 et d’une connexion internet. Pour diffuser les classements au public, connectez un second écran ou une télévision à un PC.</p></details><details><summary>Où trouver de l’aide pour commencer ?<svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg></summary><p>La rubrique « Aide &amp; Tutoriel » du logiciel vous guide dans la création des clubs, des compétitions et des tireurs, puis dans l’affichage des résultats et l’export des rapports.</p></details></div></div>
+        </div>
+      </section>
+    </main>
 
-		<footer class="border-t border-white/10 bg-main-dark-bg">
-			<div class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-sm text-white/58 sm:flex-row sm:items-center sm:justify-between lg:px-8">
-				<p>© 2026 Aim Display. Tous droits réservés.</p>
-			</div>
-		</footer>
-		<script>
-			const track = document.querySelector(".carousel-track");
-			const dots = Array.from(document.querySelectorAll(".carousel-dot"));
-			let currentSlide = 0;
-
-			function showSlide(index) {
-				currentSlide = (index + dots.length) % dots.length;
-				track.style.transform = `translateX(-${currentSlide * 100}%)`;
-				dots.forEach((dot, dotIndex) => {
-					dot.classList.toggle("is-active", dotIndex === currentSlide);
-				});
-			}
-
-			dots.forEach((dot, index) => {
-				dot.addEventListener("click", () => showSlide(index));
-			});
-
-			setInterval(() => showSlide(currentSlide + 1), 4500);
-		</script>
-	</body>
+    <footer class="site-footer"><div class="container footer-content"><a class="brand" href="#accueil"><img src="assets/logo.svg" alt="" width="30" height="30" /><span>Aim <strong>Display</strong></span></a><p>La gestion des compétitions de tir sportif.</p><a class="back-top" href="#accueil">Retour en haut <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a></div><div class="container footer-bottom"><span>© 2026 Aim Display. Tous droits réservés.</span><span>Développé par Hugo Eribon</span></div></footer>
+  </body>
 </html>

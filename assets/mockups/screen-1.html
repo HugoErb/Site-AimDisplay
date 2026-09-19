@@ -1,130 +1,75 @@
 <!doctype html>
 <html lang="fr">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-		<link rel="stylesheet" href="../../styles.css" />
-		<title>Apercu Aim Display - classement en direct</title>
-	</head>
-	<body class="m-0 overflow-hidden font-sans">
-		<div
-			class="aspect-[17/9] w-full overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 text-slate-700"
-			aria-label="Apercu Aim Display - classement en direct"
-		>
-			<div class="border-b border-slate-200/70 bg-white/80 px-5 py-2 shadow-sm backdrop-blur">
-				<div class="relative flex h-8 items-center">
-					<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-						<p class="text-[13px] font-bold leading-tight text-slate-700">CLASSEMENT EN DIRECT</p>
-						<p class="text-[9px] font-semibold text-prime-blue">Challenge de Printemps 2026</p>
-					</div>
-					<div class="flex items-center gap-2.5">
-						<img src="../logo.svg" alt="" class="h-6 w-6" />
-						<div class="leading-none">
-							<p class="text-[11px] font-semibold text-slate-700">Aim Display</p>
-							<p class="mt-1 text-[8px] text-slate-500">Gestion de tir sportif</p>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="px-8 py-4">
-				<div class="mb-4 inline-block rounded-xl border border-slate-200/70 bg-white/80 px-5 py-3 shadow-lg backdrop-blur">
-					<p class="text-[17px] font-bold leading-tight text-slate-950">Carabine 10m - Sénior S1</p>
-					<div class="mt-2 flex items-center gap-3 text-[10px] text-slate-600">
-						<span class="flex items-center gap-1.5">
-							<span class="h-2 w-2 rounded-full bg-emerald-500"></span>
-							18 participants
-						</span>
-						<span class="h-3 w-px bg-slate-300"></span>
-						<span class="flex items-center gap-1.5">
-							<span class="h-2 w-2 rounded-full bg-emerald-500"></span>
-							Page 1 sur 2
-						</span>
-					</div>
-				</div>
-
-				<div class="overflow-hidden rounded-2xl border border-slate-200/70 bg-white/85 shadow-2xl backdrop-blur">
-					<table class="w-full table-fixed text-[10px] text-slate-700">
-						<thead>
-							<tr class="border-b border-slate-200 bg-gradient-to-r from-slate-50 to-blue-50 text-slate-800">
-								<th class="w-[13%] py-2 text-center font-bold">Classement</th>
-								<th class="w-[18%] text-left font-bold">Tireur</th>
-								<th class="w-[17%] text-left font-bold">Club</th>
-								<th class="w-[7%] text-center font-bold">S1</th>
-								<th class="w-[7%] text-center font-bold">S2</th>
-								<th class="w-[7%] text-center font-bold">S3</th>
-								<th class="w-[7%] text-center font-bold">S4</th>
-								<th class="w-[7%] text-center font-bold">S5</th>
-								<th class="w-[7%] text-center font-bold">S6</th>
-								<th class="w-[10%] bg-blue-100 text-center font-bold text-blue-800">TOTAL</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="border-b border-slate-200">
-								<td class="py-2 text-center"><span class="rounded-full bg-yellow-100 px-2 py-0.5 font-semibold text-yellow-700">1er</span></td>
-								<td><span class="font-bold text-slate-950">MARTIN</span> Louis</td>
-								<td>STC Nancy</td>
-								<td class="text-center font-mono">98.6</td>
-								<td class="text-center font-mono">99.1</td>
-								<td class="text-center font-mono">97.8</td>
-								<td class="text-center font-mono">98.9</td>
-								<td class="text-center font-mono">99.0</td>
-								<td class="text-center font-mono">98.5</td>
-								<td class="bg-gradient-to-r from-blue-50 to-indigo-50 py-2 text-center font-mono text-[13px] font-bold text-prime-blue">591.9</td>
-							</tr>
-							<tr class="border-b border-slate-200">
-								<td class="py-2 text-center"><span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-600">2e</span></td>
-								<td><span class="font-bold text-slate-950">DUBOIS</span> Hugo</td>
-								<td>AST Creil</td>
-								<td class="text-center font-mono">97.9</td>
-								<td class="text-center font-mono">98.4</td>
-								<td class="text-center font-mono">98.2</td>
-								<td class="text-center font-mono">98.6</td>
-								<td class="text-center font-mono">97.7</td>
-								<td class="text-center font-mono">98.1</td>
-								<td class="bg-gradient-to-r from-blue-50 to-indigo-50 py-2 text-center font-mono text-[13px] font-bold text-prime-blue">588.9</td>
-							</tr>
-							<tr class="border-b border-slate-200">
-								<td class="py-2 text-center"><span class="rounded-full bg-orange-100 px-2 py-0.5 font-semibold text-orange-700">3e</span></td>
-								<td><span class="font-bold text-slate-950">BERNARD</span> Thomas</td>
-								<td>CT Rouen</td>
-								<td class="text-center font-mono">98.0</td>
-								<td class="text-center font-mono">97.5</td>
-								<td class="text-center font-mono">98.1</td>
-								<td class="text-center font-mono">98.8</td>
-								<td class="text-center font-mono">97.9</td>
-								<td class="text-center font-mono">97.6</td>
-								<td class="bg-gradient-to-r from-blue-50 to-indigo-50 py-2 text-center font-mono text-[13px] font-bold text-prime-blue">587.9</td>
-							</tr>
-							<tr class="border-b border-slate-200">
-								<td class="py-2 text-center"><span class="rounded-full px-2 py-0.5 font-semibold text-slate-700">4e</span></td>
-								<td><span class="font-bold text-slate-950">MOREAU</span> Lucas</td>
-								<td>TS Lyon</td>
-								<td class="text-center font-mono">96.8</td>
-								<td class="text-center font-mono">98.0</td>
-								<td class="text-center font-mono">97.7</td>
-								<td class="text-center font-mono">98.3</td>
-								<td class="text-center font-mono">96.9</td>
-								<td class="text-center font-mono">97.8</td>
-								<td class="bg-gradient-to-r from-blue-50 to-indigo-50 py-2 text-center font-mono text-[13px] font-bold text-prime-blue">585.5</td>
-							</tr>
-							<tr>
-								<td class="py-2 text-center"><span class="rounded-full px-2 py-0.5 font-semibold text-slate-700">5e</span></td>
-								<td><span class="font-bold text-slate-950">PETIT</span> Antoine</td>
-								<td>AL Arques</td>
-								<td class="text-center font-mono">96.4</td>
-								<td class="text-center font-mono">97.2</td>
-								<td class="text-center font-mono">97.8</td>
-								<td class="text-center font-mono">96.9</td>
-								<td class="text-center font-mono">97.5</td>
-								<td class="text-center font-mono">96.8</td>
-								<td class="bg-gradient-to-r from-blue-50 to-indigo-50 py-2 text-center font-mono text-[13px] font-bold text-prime-blue">582.6</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Aim Display — Démonstration du classement</title>
+    <style>
+      @font-face{font-family:Inter;src:url("../fonts/Inter-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+      @font-face{font-family:Inter;src:url("../fonts/Inter-SemiBold.woff2") format("woff2");font-weight:600;font-display:swap}
+      *{box-sizing:border-box}
+      :root{color-scheme:light;font-family:Inter,system-ui,sans-serif;color:#334155;background:#f2f5f9;font-synthesis:none}
+      body{margin:0;background:radial-gradient(ellipse at 75% 80%,#e8f0fe,transparent 65%),#f4f6f9;font-size:1.15vw;line-height:1.5}
+      p,h1,h2{margin:0}
+      header{display:flex;align-items:center;justify-content:space-between;height:7.2vw;padding:0 3.5vw;background:#fff;border-bottom:1px solid #e4e9f0}
+      .brand{display:flex;gap:1vw;align-items:center;width:25%;font-size:1.35vw;font-weight:600;letter-spacing:-.025em}
+      .brand img{width:3vw;height:3vw}
+      .brand small{display:block;font-size:.8vw;font-weight:400;color:#64748b;letter-spacing:0;margin-top:.15vw}
+      .heading{text-align:center}
+      .heading h1{font-size:1.4vw;font-weight:600;letter-spacing:.02em;color:#1e293b}
+      .heading p{font-size:1vw;color:#3b80f6;margin-top:.3vw}
+      .demo{width:25%;text-align:right;font-size:.8vw;color:#64748b}
+      main{padding:2.8vw 3.5vw 2vw}
+      .category{display:flex;align-items:center;justify-content:space-between;margin-bottom:2.2vw}
+      .category h2{font-size:2vw;letter-spacing:-.04em;color:#172333;font-weight:600}
+      .category p{display:flex;align-items:center;gap:.7vw;margin-top:.5vw;color:#6b7b91;font-size:.95vw}
+      .dot{display:inline-block;width:.5vw;height:.5vw;border-radius:50%;background:#3b80f6}
+      .discipline{font-size:.85vw;color:#4878be;border:1px solid #d6e4f9;background:#eaf2ff;padding:.6vw 1.1vw;border-radius:.5vw}
+      .table-frame{overflow:hidden;background:#fff;border:1px solid #dfe6ef;border-radius:.9vw;box-shadow:0 .6vw 2.5vw #22365306}
+      table{border-collapse:collapse;width:100%;table-layout:fixed;text-align:center;font-size:1.05vw}
+      caption{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+      th{background:#f8fafc;color:#68768b;font-size:.85vw;font-weight:600;letter-spacing:.015em;height:4vw;border-bottom:1px solid #e4eaf1}
+      td{height:4.9vw;border-bottom:1px solid #e9edf3;font-variant-numeric:tabular-nums}
+      tbody tr:last-child td{border-bottom:0}
+      tbody tr:nth-child(even){background:#fafbfc}
+      th:first-child{width:10%}th:nth-child(2){width:20%}th:nth-child(3){width:18%}
+      th:nth-child(2),th:nth-child(3),td:nth-child(2),td:nth-child(3){text-align:left}
+      th:last-child{width:11%;background:#eaf2ff;color:#3b70c5}
+      td:last-child{background:#f0f5ff;color:#3174df;font-size:1.4vw;font-weight:600}
+      td:nth-child(2){font-size:1vw;color:#203047}
+      td:nth-child(3){font-size:.95vw;color:#63748a}
+      .name{font-weight:600}
+      .rank{display:inline-grid;place-items:center;width:2.6vw;height:2.4vw;border-radius:.5vw;color:#75839a;font-size:1vw}
+      .gold{background:#fff4cf;color:#987323}.silver{background:#edf1f6;color:#69788d}.bronze{background:#faeddf;color:#a67642}
+      footer{display:flex;justify-content:space-between;padding:1.7vw 0 0;font-size:.8vw;color:#748198}
+      footer span:first-child{display:flex;align-items:center;gap:.6vw}
+      @media(prefers-reduced-motion:no-preference){tbody tr{animation:appear .5s ease both}tbody tr:nth-child(2){animation-delay:.05s}tbody tr:nth-child(3){animation-delay:.1s}tbody tr:nth-child(4){animation-delay:.15s}tbody tr:nth-child(5){animation-delay:.2s}}
+      @keyframes appear{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="brand"><img src="../logo.svg" alt="" /><div>Aim Display<small>Gestion de tir sportif</small></div></div>
+      <div class="heading"><h1>CLASSEMENT EN DIRECT</h1><p>Challenge de Printemps 2026</p></div>
+      <p class="demo">Aperçu de démonstration</p>
+    </header>
+    <main>
+      <div class="category"><div><h2>Carabine 10 m · Sénior S1</h2><p><span class="dot"></span> Classement par catégorie</p></div><span class="discipline">CARABINE · 10 MÈTRES</span></div>
+      <div class="table-frame">
+        <table>
+          <caption>Exemple de classement : données fictives de cinq tireurs, six séries et score total.</caption>
+          <thead><tr><th scope="col">RANG</th><th scope="col">TIREUR</th><th scope="col">CLUB</th><th scope="col">S1</th><th scope="col">S2</th><th scope="col">S3</th><th scope="col">S4</th><th scope="col">S5</th><th scope="col">S6</th><th scope="col">TOTAL</th></tr></thead>
+          <tbody>
+            <tr><td><span class="rank gold">1</span></td><td><span class="name">MARTIN</span> Louis</td><td>STC Nancy</td><td>98.6</td><td>99.1</td><td>97.8</td><td>98.9</td><td>99.0</td><td>98.5</td><td>591.9</td></tr>
+            <tr><td><span class="rank silver">2</span></td><td><span class="name">DUBOIS</span> Hugo</td><td>AST Creil</td><td>97.9</td><td>98.4</td><td>98.2</td><td>98.6</td><td>97.7</td><td>98.1</td><td>588.9</td></tr>
+            <tr><td><span class="rank bronze">3</span></td><td><span class="name">BERNARD</span> Thomas</td><td>CT Rouen</td><td>98.0</td><td>97.5</td><td>98.1</td><td>98.8</td><td>97.9</td><td>97.6</td><td>587.9</td></tr>
+            <tr><td><span class="rank">4</span></td><td><span class="name">MOREAU</span> Lucas</td><td>TS Lyon</td><td>96.8</td><td>98.0</td><td>97.7</td><td>98.3</td><td>96.9</td><td>97.8</td><td>585.5</td></tr>
+            <tr><td><span class="rank">5</span></td><td><span class="name">PETIT</span> Antoine</td><td>AL Arques</td><td>96.4</td><td>97.2</td><td>97.8</td><td>96.9</td><td>97.5</td><td>96.8</td><td>582.6</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <footer><span><span class="dot"></span> Les résultats, au rythme de la compétition.</span><span>Données de démonstration</span></footer>
+    </main>
+  </body>
 </html>
