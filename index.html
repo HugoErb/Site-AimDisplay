@@ -3,26 +3,91 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Aim Display accompagne les clubs de tir sportif : compétitions, inscriptions, scores, classements en direct et rapports PDF, dans une seule application." />
+    <meta name="description" content="Logiciel Windows pour gérer les compétitions de tir sportif : inscriptions, scores, classements en direct et rapports PDF pour les clubs." />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#191a1a" />
     <meta name="application-name" content="Aim Display" />
+    <meta name="author" content="Hugo Eribon" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_FR" />
     <meta property="og:site_name" content="Aim Display" />
-    <meta property="og:title" content="Aim Display — Votre compétition, en toute simplicité" />
-    <meta property="og:description" content="De la première inscription au classement final. Le logiciel pensé pour les clubs de tir sportif." />
+    <meta property="og:title" content="Logiciel de gestion de compétitions de tir sportif | Aim Display" />
+    <meta property="og:description" content="Gérez les inscriptions, les scores, les classements en direct et les rapports PDF de vos compétitions de tir sportif." />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Aim Display — Gestion de compétitions de tir sportif" />
-    <meta name="twitter:description" content="Compétitions, tireurs, classements en direct et rapports PDF. Tout votre concours dans une seule application." />
+    <meta name="twitter:title" content="Logiciel de gestion de compétitions de tir sportif | Aim Display" />
+    <meta name="twitter:description" content="Gérez les inscriptions, les scores, les classements en direct et les rapports PDF de vos compétitions de tir sportif." />
     <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
     <link rel="preload" href="assets/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="assets/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
-    <title>Aim Display — Logiciel de compétition de tir sportif</title>
+    <title>Logiciel de gestion de compétitions de tir sportif | Aim Display</title>
     <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"WebPage","name":"Aim Display — Logiciel de compétition de tir sportif","description":"Gestion des compétitions de tir sportif, inscriptions, scores, classements en direct et rapports PDF.","inLanguage":"fr-FR","about":{"@type":"SoftwareApplication","name":"Aim Display","applicationCategory":"SportsApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"1.0.6"}}
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "name": "Logiciel de gestion de compétitions de tir sportif | Aim Display",
+            "description": "Logiciel Windows pour gérer les compétitions de tir sportif : inscriptions, scores, classements en direct et rapports PDF pour les clubs.",
+            "inLanguage": "fr-FR",
+            "mainEntity": { "@id": "#aim-display" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "#aim-display",
+            "name": "Aim Display",
+            "description": "Application Windows de gestion des compétitions de tir sportif pour les clubs.",
+            "applicationCategory": "SportsApplication",
+            "applicationSubCategory": "Gestion de compétitions de tir sportif",
+            "operatingSystem": ["Windows 10", "Windows 11"],
+            "softwareVersion": "1.0.6",
+            "softwareRequirements": "Windows 10 ou Windows 11 et connexion internet",
+            "downloadUrl": "https://github.com/HugoErb/AimDisplay/releases/latest/download/Aim-Display-Setup-1.0.6.exe",
+            "author": { "@type": "Person", "name": "Hugo Eribon" },
+            "featureList": [
+              "Gestion des compétitions de tir sportif",
+              "Inscription des tireurs et gestion des clubs",
+              "Saisie des scores et classement en direct",
+              "Génération de rapports PDF"
+            ],
+            "screenshot": [
+              "assets/screenshots/screen-2.png",
+              "assets/screenshots/screen-3.png",
+              "assets/screenshots/screen-4.png"
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Comment installer Aim Display ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Téléchargez l’installateur Windows, ouvrez-le et suivez les étapes d’installation. Lancez ensuite Aim Display et créez votre compte dans l’application."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "De quoi ai-je besoin pour utiliser Aim Display ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Vous avez besoin d’un ordinateur sous Windows 10 ou Windows 11 et d’une connexion internet. Pour diffuser les classements au public, connectez un second écran ou une télévision à un PC."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Où trouver de l’aide pour commencer ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "La rubrique Aide et Tutoriel du logiciel guide la création des clubs, des compétitions et des tireurs, puis l’affichage des résultats et l’export des rapports."
+                }
+              }
+            ]
+          }
+        ]
+      }
     </script>
   </head>
   <body>
@@ -139,7 +204,7 @@
             <div class="download-copy"><p class="eyebrow">À VOUS DE JOUER</p><h2 id="download-title">Votre prochain concours<br />commence ici.</h2><p>Installez Aim Display sur l’ordinateur du club.<br />Et faites place à la compétition.</p><div class="requirements"><span><svg class="icon" aria-hidden="true"><use href="#i-windows" /></svg> Windows 10 ou 11</span><span><svg class="icon" aria-hidden="true"><use href="#i-wifi" /></svg> Connexion internet</span></div></div>
             <div class="installer-card"><div class="installer-heading"><img src="assets/logo.svg" alt="" width="48" height="48" /><span class="version-badge">v1.0.6</span></div><h3>Aim Display</h3><p>Votre espace de gestion de tir sportif.</p><a class="button button-primary" href="https://github.com/HugoErb/AimDisplay/releases/latest/download/Aim-Display-Setup-1.0.6.exe"><svg class="icon" aria-hidden="true"><use href="#i-download" /></svg> Télécharger pour Windows</a><span class="installer-note">Installateur Windows · .exe</span></div>
           </div>
-          <div class="faq" data-reveal><h3>Foire aux questions</h3><div class="faq-items"><details><summary>Comment installer Aim Display ?<svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg></summary><div class="faq-answer"><p>Téléchargez l’installateur Windows, ouvrez-le et suivez les étapes d’installation. Lancez ensuite Aim Display et créez votre compte dans l’application.</p></div></details><details><summary>De quoi ai-je besoin ?<svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg></summary><div class="faq-answer"><p>D’un ordinateur sous Windows 10 ou Windows 11 et d’une connexion internet. Pour diffuser les classements au public, connectez un second écran ou une télévision à un PC.</p></div></details><details><summary>Où trouver de l’aide pour commencer ?<svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg></summary><div class="faq-answer"><p>La rubrique « Aide &amp; Tutoriel » du logiciel vous guide dans la création des clubs, des compétitions et des tireurs, puis dans l’affichage des résultats et l’export des rapports.</p></div></details></div></div>
+          <section class="faq" aria-labelledby="faq-title" data-reveal><h3 id="faq-title">Foire aux questions</h3><div class="faq-items"><details><summary>Comment installer Aim Display ?<svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg></summary><div class="faq-answer"><p>Téléchargez l’installateur Windows, ouvrez-le et suivez les étapes d’installation. Lancez ensuite Aim Display et créez votre compte dans l’application.</p></div></details><details><summary>De quoi ai-je besoin ?<svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg></summary><div class="faq-answer"><p>D’un ordinateur sous Windows 10 ou Windows 11 et d’une connexion internet. Pour diffuser les classements au public, connectez un second écran ou une télévision à un PC.</p></div></details><details><summary>Où trouver de l’aide pour commencer ?<svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg></summary><div class="faq-answer"><p>La rubrique « Aide &amp; Tutoriel » du logiciel vous guide dans la création des clubs, des compétitions et des tireurs, puis dans l’affichage des résultats et l’export des rapports.</p></div></details></div></section>
         </div>
       </section>
     </main>
