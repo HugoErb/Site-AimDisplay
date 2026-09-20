@@ -79,6 +79,64 @@ document.querySelectorAll("[data-preview]").forEach((link) => {
 
 // Sans cette API ou avec la réduction des mouvements, tout reste visible.
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+// Ouverture fluide des réponses, avec le comportement natif conservé au clavier.
+const faqAnimations = new WeakMap();
+document.querySelectorAll(".faq details").forEach((details) => {
+  const summary = details.querySelector("summary");
+  const answer = details.querySelector(".faq-answer");
+
+  summary.addEventListener("click", (event) => {
+    event.preventDefault();
+    const currentAnimation = faqAnimations.get(details);
+    const opening = !details.classList.contains("is-open");
+
+    if (reducedMotion.matches) {
+      currentAnimation?.cancel();
+      details.open = opening;
+      details.classList.toggle("is-open", opening);
+      answer.style.height = "";
+      return;
+    }
+
+    // La hauteur affichée est lue avant d'interrompre une animation en cours.
+    const currentHeight = details.open ? answer.getBoundingClientRect().height : 0;
+    const currentOpacity = details.open ? Number.parseFloat(window.getComputedStyle(answer).opacity) : 0;
+    currentAnimation?.cancel();
+
+    if (opening) {
+      details.open = true;
+      details.classList.add("is-open");
+      answer.style.height = "auto";
+      const targetHeight = answer.scrollHeight;
+      const animation = answer.animate([
+        { height: `${currentHeight}px`, opacity: currentOpacity, transform: "translateY(-4px)" },
+        { height: `${targetHeight}px`, opacity: 1, transform: "translateY(0)" }
+      ], { duration: 420, easing: "cubic-bezier(.2,.7,.2,1)" });
+      faqAnimations.set(details, animation);
+      animation.onfinish = () => {
+        if (faqAnimations.get(details) !== animation) return;
+        answer.style.height = "auto";
+        faqAnimations.delete(details);
+      };
+      return;
+    }
+
+    details.classList.remove("is-open");
+    const animation = answer.animate([
+      { height: `${currentHeight}px`, opacity: currentOpacity, transform: "translateY(0)" },
+      { height: "0px", opacity: 0, transform: "translateY(-4px)" }
+    ], { duration: 360, easing: "cubic-bezier(.4,0,.2,1)" });
+    faqAnimations.set(details, animation);
+    animation.onfinish = () => {
+      if (faqAnimations.get(details) !== animation) return;
+      details.open = false;
+      answer.style.height = "";
+      faqAnimations.delete(details);
+    };
+  });
+});
+
 if ("IntersectionObserver" in window && !reducedMotion.matches) {
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
