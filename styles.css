@@ -1246,11 +1246,127 @@ html:not(.has-js) .faq details[open] summary .icon {
 .footer-bottom {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
   border-top: 1px solid var(--line);
   padding-top: 22px;
   font-size: 11px;
   color: #8e9a9a;
+}
+
+.legal-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.legal-links a {
+  color: #b5bdbd;
+  transition: color .2s;
+}
+
+.legal-links a:hover {
+  color: var(--blue-light);
+}
+
+/* Pages juridiques */
+.legal-main {
+  min-height: calc(100vh - 190px);
+  padding: 72px 0 96px;
+  background: var(--paper);
+  color: #1d252b;
+}
+
+.legal-page {
+  max-width: 860px;
+}
+
+.legal-page-header {
+  padding-bottom: 36px;
+  border-bottom: 1px solid #dde3e7;
+}
+
+.legal-page h1 {
+  margin: 12px 0 0;
+  font-size: clamp(38px,5vw,58px);
+  color: #172027;
+  letter-spacing: -2.4px;
+}
+
+.legal-intro {
+  max-width: 680px;
+  margin-top: 18px;
+  color: #5d6871;
+  font-size: 16px;
+}
+
+.legal-updated {
+  display: inline-block;
+  margin-top: 18px;
+  color: #77828a;
+  font-size: 12px;
+}
+
+.legal-content {
+  display: grid;
+  gap: 42px;
+  padding-top: 42px;
+}
+
+.legal-content section {
+  scroll-margin-top: 110px;
+}
+
+.legal-content h2 {
+  margin: 0 0 16px;
+  font-size: 25px;
+  color: #1f2930;
+  letter-spacing: -.7px;
+}
+
+.legal-content h3 {
+  margin: 24px 0 9px;
+  color: #26323a;
+  font-size: 17px;
+}
+
+.legal-content p,
+.legal-content li,
+.legal-contact-card {
+  color: #58656e;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.legal-content p+p {
+  margin-top: 12px;
+}
+
+.legal-content ul {
+  margin: 12px 0 0;
+  padding-left: 20px;
+}
+
+.legal-content a {
+  color: #2865c6;
+  text-decoration: underline;
+  text-decoration-color: #2865c64d;
+  text-underline-offset: 3px;
+}
+
+.legal-contact-card {
+  padding: 20px 22px;
+  border: 1px solid #dce3e8;
+  border-radius: 11px;
+  background: #f2f5f7;
+}
+
+.legal-note {
+  padding: 18px 20px;
+  border-left: 3px solid var(--blue);
+  border-radius: 0 8px 8px 0;
+  background: #edf4ff;
 }
 
 /* Animations progressives : le contenu reste accessible sans JavaScript. */
@@ -1778,6 +1894,32 @@ html:not(.has-js) .faq details[open] summary .icon {
     flex-direction: column;
     gap: 8px;
     padding-top: 20px;
+  }
+  .legal-links {
+    gap: 15px;
+    order: -1;
+  }
+  .legal-main {
+    padding: 48px 0 65px;
+  }
+  .legal-page h1 {
+    font-size: 37px;
+    letter-spacing: -1.5px;
+  }
+  .legal-intro {
+    font-size: 14px;
+  }
+  .legal-content {
+    gap: 34px;
+    padding-top: 34px;
+  }
+  .legal-content h2 {
+    font-size: 22px;
+  }
+  .legal-content p,
+  .legal-content li,
+  .legal-contact-card {
+    font-size: 14px;
   }
 }
 
