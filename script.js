@@ -155,3 +155,17 @@ if ("IntersectionObserver" in window && !reducedMotion.matches) {
     document.querySelectorAll(".reveal-ready").forEach((element) => element.classList.add("is-visible"));
   });
 }
+
+// Version affichée lue depuis la dernière release GitHub ; le badge reste masqué en cas d'échec.
+const versionBadge = document.querySelector(".version-badge");
+
+if (versionBadge) {
+  fetch("https://api.github.com/repos/HugoErb/AimDisplay/releases/latest")
+    .then((response) => (response.ok ? response.json() : Promise.reject(response.status)))
+    .then((release) => {
+      if (!release.tag_name) return;
+      versionBadge.textContent = release.tag_name.startsWith("v") ? release.tag_name : `v${release.tag_name}`;
+      versionBadge.hidden = false;
+    })
+    .catch(() => {});
+}
