@@ -523,7 +523,7 @@ h1>span {
 .video-caption {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 12px 24px;
   margin-top: 16px;
   color: #9ba5a6;
@@ -1240,7 +1240,7 @@ html:not(.has-js) .faq details[open] summary .icon {
 }
 
 .footer-content>p {
-  font-size: 12px;
+  font-size: 14px;
   color: #99a2a3;
 }
 
@@ -1248,7 +1248,7 @@ html:not(.has-js) .faq details[open] summary .icon {
   display: flex;
   align-items: center;
   gap: 9px;
-  font-size: 12px;
+  font-size: 14px;
   color: #b5bdbd;
 }
 
@@ -1265,7 +1265,7 @@ html:not(.has-js) .faq details[open] summary .icon {
   gap: 20px;
   border-top: 1px solid var(--line);
   padding-top: 22px;
-  font-size: 11px;
+  font-size: 13px;
   color: #8e9a9a;
 }
 
@@ -1919,10 +1919,10 @@ html:not(.has-js) .faq details[open] summary .icon {
     height: 26px;
   }
   .back-top {
-    font-size: 11px;
+    font-size: 13px;
   }
   .footer-bottom {
-    font-size: 11px;
+    font-size: 13px;
     flex-direction: column;
     gap: 8px;
     padding-top: 20px;
