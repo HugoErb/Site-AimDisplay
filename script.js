@@ -29,54 +29,6 @@ document.addEventListener("click", (event) => {
 });
 mobileViewport.addEventListener("change", () => setMenu(false));
 
-// Galerie accessible au clavier, sans défilement automatique.
-const tabs = [...document.querySelectorAll(".preview-tab")];
-const panels = [...document.querySelectorAll(".preview-panel")];
-const previewDescription = document.querySelector("#preview-description");
-const previewExpand = document.querySelector("#preview-expand");
-const previewIndex = document.querySelector(".showcase-index");
-
-function activateTab(tab, focus = false) {
-  const activePanel = document.getElementById(tab.getAttribute("aria-controls"));
-  tabs.forEach((item) => {
-    const selected = item === tab;
-    item.setAttribute("aria-selected", String(selected));
-    item.tabIndex = selected ? 0 : -1;
-  });
-  panels.forEach((panel) => { panel.hidden = panel !== activePanel; });
-  previewDescription.textContent = activePanel.dataset.caption;
-  previewExpand.href = activePanel.dataset.full;
-  previewIndex.textContent = `${String(tabs.indexOf(tab) + 1).padStart(2, "0")} — 05`;
-  if (focus) tab.focus({ preventScroll: true });
-
-  // Ne déplace que la barre des onglets, sans faire défiler la page.
-  const tablist = tab.parentElement;
-  if (tab.offsetLeft < tablist.scrollLeft || tab.offsetLeft + tab.offsetWidth > tablist.scrollLeft + tablist.clientWidth) {
-    tablist.scrollLeft = tab.offsetLeft - (tablist.clientWidth - tab.offsetWidth) / 2;
-  }
-}
-
-tabs.forEach((tab, index) => {
-  tab.addEventListener("click", () => activateTab(tab));
-  tab.addEventListener("keydown", (event) => {
-    let next;
-    if (event.key === "ArrowRight") next = (index + 1) % tabs.length;
-    if (event.key === "ArrowLeft") next = (index - 1 + tabs.length) % tabs.length;
-    if (event.key === "Home") next = 0;
-    if (event.key === "End") next = tabs.length - 1;
-    if (next === undefined) return;
-    event.preventDefault();
-    activateTab(tabs[next], true);
-  });
-});
-
-document.querySelectorAll("[data-preview]").forEach((link) => {
-  link.addEventListener("click", () => {
-    const tab = document.getElementById(link.dataset.preview);
-    if (tab) activateTab(tab, true);
-  });
-});
-
 // Sans cette API ou avec la réduction des mouvements, tout reste visible.
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -156,16 +108,108 @@ if ("IntersectionObserver" in window && !reducedMotion.matches) {
   });
 }
 
-// Version affichée lue depuis la dernière release GitHub ; le badge reste masqué en cas d'échec.
-const versionBadge = document.querySelector(".version-badge");
+// Vidéo de présentation : lecture muette quand elle est visible, pause hors de l'écran.
+const promoVideo = document.querySelector("#promo-video");
 
-if (versionBadge) {
+if (promoVideo) {
+  const videoToggle = document.querySelector(".video-toggle");
+  const videoFullscreen = document.querySelector(".video-fullscreen");
+  // Part visible à partir de laquelle la vidéo du hero est considérée à l'écran.
+  const visibleRatio = 0.25;
+  const autoplayAllowed = () => !reducedMotion.matches && !navigator.connection?.saveData;
+  // Sans action du visiteur, la vidéo suit les préférences ; ensuite, son choix l'emporte.
+  let intent = null;
+
+  promoVideo.controls = false;
+  videoToggle.hidden = false;
+  videoFullscreen.hidden = !(promoVideo.requestFullscreen || promoVideo.webkitEnterFullscreen);
+
+  function updateToggle() {
+    const playing = !promoVideo.paused;
+    videoToggle.querySelector("span").textContent = playing ? "Pause" : "Lecture";
+    videoToggle.querySelector("use").setAttribute("href", playing ? "#i-pause" : "#i-play");
+  }
+
+  function play() {
+    promoVideo.play().catch(updateToggle);
+  }
+
+  // Mesure faite au moment du clic : l'état de l'observateur peut avoir un temps de retard.
+  function isShown() {
+    const bounds = promoVideo.getBoundingClientRect();
+    return Math.min(bounds.bottom, window.innerHeight) - Math.max(bounds.top, 0) >= bounds.height * visibleRatio;
+  }
+
+  function setIntent(value) {
+    intent = value;
+    if (value === "pause") promoVideo.pause();
+    else if (isShown()) play();
+  }
+
+  updateToggle();
+  promoVideo.addEventListener("play", updateToggle);
+  promoVideo.addEventListener("pause", updateToggle);
+
+  videoToggle.addEventListener("click", () => setIntent(promoVideo.paused ? "play" : "pause"));
+  promoVideo.addEventListener("click", () => {
+    if (!document.fullscreenElement) setIntent(promoVideo.paused ? "play" : "pause");
+  });
+
+  videoFullscreen.addEventListener("click", () => {
+    if (promoVideo.requestFullscreen) promoVideo.requestFullscreen().catch(() => {});
+    else promoVideo.webkitEnterFullscreen();
+  });
+  document.addEventListener("fullscreenchange", () => {
+    promoVideo.controls = document.fullscreenElement === promoVideo;
+  });
+
+  if ("IntersectionObserver" in window) {
+    // Le fichier ne se télécharge qu'à l'approche de la vidéo.
+    new IntersectionObserver((entries, observer) => {
+      if (!entries[0].isIntersecting) return;
+      if (autoplayAllowed()) promoVideo.preload = "auto";
+      observer.disconnect();
+    }, { rootMargin: "400px 0px" }).observe(promoVideo);
+
+    new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) promoVideo.pause();
+      else if (intent === "play" || (intent === null && autoplayAllowed())) play();
+    }, { threshold: visibleRatio }).observe(promoVideo);
+  }
+
+  reducedMotion.addEventListener("change", (event) => {
+    if (event.matches && intent !== "play") promoVideo.pause();
+  });
+}
+
+// Reflet lumineux qui suit le pointeur sur les cartes de fonctionnalités.
+const featureGrid = document.querySelector(".feature-grid");
+
+if (featureGrid && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  featureGrid.addEventListener("pointermove", (event) => {
+    const card = event.target.closest(".feature-card");
+    if (!card) return;
+    const bounds = card.getBoundingClientRect();
+    card.style.setProperty("--spot-x", `${Math.round(event.clientX - bounds.left)}px`);
+    card.style.setProperty("--spot-y", `${Math.round(event.clientY - bounds.top)}px`);
+  });
+}
+
+// Version lue depuis la dernière release GitHub ; en cas d'échec, le badge reste masqué et la pastille garde son texte.
+const versionBadge = document.querySelector(".version-badge");
+const releaseLabel = document.querySelector("[data-release-label]");
+
+if (versionBadge || releaseLabel) {
   fetch("https://api.github.com/repos/HugoErb/AimDisplay/releases/latest")
     .then((response) => (response.ok ? response.json() : Promise.reject(response.status)))
     .then((release) => {
       if (!release.tag_name) return;
-      versionBadge.textContent = release.tag_name.startsWith("v") ? release.tag_name : `v${release.tag_name}`;
-      versionBadge.hidden = false;
+      const version = release.tag_name.replace(/^v/, "");
+      if (versionBadge) {
+        versionBadge.textContent = `v${version}`;
+        versionBadge.hidden = false;
+      }
+      if (releaseLabel) releaseLabel.textContent = `Version ${version} disponible`;
     })
     .catch(() => {});
 }

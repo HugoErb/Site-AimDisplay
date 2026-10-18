@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://aimdisplay.hugoeribon.fr/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://aimdisplay.hugoeribon.fr/assets/video/aim-display-promo-poster.jpg</video:thumbnail_loc>
+      <video:title>Aim Display en 24 secondes</video:title>
+      <video:description>Présentation d’Aim Display : organisation de la compétition, saisie des scores, classement en direct et rapports PDF.</video:description>
+      <video:content_loc>https://aimdisplay.hugoeribon.fr/assets/video/aim-display-promo.mp4</video:content_loc>
+      <video:duration>24</video:duration>
+      <video:publication_date>2026-10-18</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://aimdisplay.hugoeribon.fr/mentions-legales.html</loc>
+    <lastmod>2026-09-20</lastmod>
+  </url>
+  <url>
+    <loc>https://aimdisplay.hugoeribon.fr/confidentialite.html</loc>
+    <lastmod>2026-09-20</lastmod>
+  </url>
+</urlset>
